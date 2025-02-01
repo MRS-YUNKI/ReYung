@@ -8,7 +8,7 @@ import org.example.domain.Request.RegistrationRequest
 import org.example.domain.UserUseCase
 
 class UserUI(private val userUseCase: UserUseCase) {
-    private var userAuthorized: UserResponse? = null
+    var userAuthorized: UserResponse? = null
     fun authorize(){
         println("Введите почту:")
         val email = readlnOrNull()
@@ -85,7 +85,7 @@ class UserUI(private val userUseCase: UserUseCase) {
         val registrationRequest = RegistrationRequest(
             email = email,
             firstName = firstName,
-            password = password,)
+            password = password)
             val newUser = userUseCase.registration(registrationRequest)
         println(printUserResponse(newUser))
     }
