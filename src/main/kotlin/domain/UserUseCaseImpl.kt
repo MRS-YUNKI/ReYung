@@ -39,13 +39,12 @@ class UserUseCaseImpl (private val userRepository: UserRepository) : UserUseCase
         userRepository.updateUserById(changePasswordRequest.userId, updatedUser)
     }
 
-    override fun changeProfile(changeProfileRequest: ChangeProfileRequest) : UserResponse {
+    override fun changeProfile(changeProfileRequest: ChangeProfileRequest) {
         var updatedUser = userRepository.findUserbyId(changeProfileRequest.userId)
-        updatedUser.firstName = changeProfileRequest.newFirstName
-        updatedUser.lastName = changeProfileRequest.newLastName
-        updatedUser.phone = changeProfileRequest.newPhone
-        updatedUser.address = changeProfileRequest.newAddress
-        val changedUser = userRepository.updateUserById(changeProfileRequest.userId, updatedUser)
-        return UserDTOtoUserResponse(changedUser)
+        if (!changeProfileRequest.newFirstName.isNullOrEmpty()) updatedUser.firstName = changeProfileRequest.newFirstName
+        if (!changeProfileRequest.newLastName.isNullOrEmpty()) updatedUser.lastName = changeProfileRequest.newLastName
+        if (!changeProfileRequest.newPhone.isNullOrEmpty()) updatedUser.phone = changeProfileRequest.newPhone
+        if (!changeProfileRequest.newAddress.isNullOrEmpty()) updatedUser.address = changeProfileRequest.newAddress
+        userRepository.updateUserById(changeProfileRequest.userId, updatedUser)
     }
 }

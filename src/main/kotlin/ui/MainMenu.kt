@@ -38,7 +38,10 @@ class MainMenu(
                 }
             }
             2 -> {
-                userUI.registration()
+                displayMenuItem {
+                    userUI.registration()
+                    displayMenu()
+                }
             }
             3 -> {
                 return
