@@ -22,6 +22,7 @@ class UserRepositoryImpl : UserRepository {
 
     override fun updateUserById(userId: Int, updatedUser: UserDTO): UserDTO {
         val oldUser = userSource.first { it.userId == userId }
+        checkNotNull(oldUser)
         oldUser.phone = updatedUser.phone
         oldUser.address = updatedUser.address
         oldUser.firstName = updatedUser.firstName

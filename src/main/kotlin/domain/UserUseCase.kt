@@ -1,7 +1,6 @@
 package org.example.domain
 
-import org.example.data.model.UserDTO
-import org.example.domain.Pesponse.UserResponse
+import domain.Response.UserResponse
 import org.example.domain.Request.AuthorizeRequest
 import org.example.domain.Request.ChangePasswordRequest
 import org.example.domain.Request.ChangeProfileRequest
@@ -11,5 +10,5 @@ interface UserUseCase {
     fun authorize(authorizeRequest : AuthorizeRequest) : UserResponse
     fun registration(registrationRequest: RegistrationRequest) : UserResponse
     fun changePassword(changePasswordRequest: ChangePasswordRequest)
-    fun changeProfile(changeProfileRequest: ChangeProfileRequest)
+    fun changeProfile(changeProfileRequest: ChangeProfileRequest) : UserResponse
 }

@@ -1,13 +1,11 @@
 package org.example.domain
 
 import org.example.data.UserRepository
-import org.example.data.UserRepositoryImpl
-import org.example.domain.Pesponse.UserResponse
+import domain.Response.UserResponse
 import org.example.domain.Request.AuthorizeRequest
 import org.example.domain.Request.ChangePasswordRequest
 import org.example.domain.Request.ChangeProfileRequest
 import org.example.domain.Request.RegistrationRequest
-import org.example.domain.Response.UserDTOtoUserResponse
 
 class UserUseCaseImpl (private val userRepository: UserRepository) : UserUseCase {
     override fun authorize(authorizeRequest: AuthorizeRequest): UserResponse {
@@ -41,14 +39,13 @@ class UserUseCaseImpl (private val userRepository: UserRepository) : UserUseCase
         userRepository.updateUserById(changePasswordRequest.userId, updatedUser)
     }
 
-    override fun changeProfile(changeProfileRequest: ChangeProfileRequest) {
+    override fun changeProfile(changeProfileRequest: ChangeProfileRequest) : UserResponse {
         var updatedUser = userRepository.findUserbyId(changeProfileRequest.userId)
         updatedUser.firstName = changeProfileRequest.newFirstName
         updatedUser.lastName = changeProfileRequest.newLastName
         updatedUser.phone = changeProfileRequest.newPhone
         updatedUser.address = changeProfileRequest.newAddress
-        userRepository.updateUserById(changeProfileRequest.userId, updatedUser)
-
-
+        val changedUser = userRepository.updateUserById(changeProfileRequest.userId, updatedUser)
+        return UserDTOtoUserResponse(changedUser)
     }
 }

@@ -6,23 +6,23 @@ val shoesList = listOf(
     ShoesDTO(
         shoesId = 1,
         shoesName = "Nike",
-        shoesDesc = "Beauty",
+        shoesDescription = "Beauty",
         shoesUrl = "url1",
         category = "cat1"
     ),
     ShoesDTO(
         shoesId = 2,
         shoesName = "Nike",
-        shoesDesc = "Beauty",
+        shoesDescription = "Beauty",
         shoesUrl = "url2",
-        category = "cat1"
+        category = "cat2"
     ),
     ShoesDTO(
         shoesId = 3,
         shoesName = "Same",
-        shoesDesc = "Beauty",
+        shoesDescription = "Beauty",
         shoesUrl = "url3",
-        category = "cat2"
+        category = "cat1"
     )
 )
 
@@ -31,17 +31,17 @@ val userList = listOf(
         userId = 1,
         firstName = "Andrey",
         password = "123",
-        email  = "testemail1@gmail.com"
+        email  = "test1@gmail.com"
         ),
     UserDTO(
         userId = 2,
         firstName = "Bogdan",
         password = "321",
-        email  = "testemail2@gmail.com"
+        email  = "test2@gmail.com"
     ),
     UserDTO(
         userId = 3,
         firstName = "Vlad",
-        password = "33221",
-        email  = "testemail3@gmail.com")
+        password = "1122",
+        email  = "test3@gmail.com")
 )

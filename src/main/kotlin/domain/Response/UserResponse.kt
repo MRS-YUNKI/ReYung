@@ -1,4 +1,4 @@
-package org.example.domain.Pesponse
+package domain.Response
 
 data class UserResponse(
     val userId: Int,

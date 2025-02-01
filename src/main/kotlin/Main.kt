@@ -10,5 +10,4 @@ fun main() {
     val userUseCase = UserUseCaseImpl(userRepository)
     val userUI = UserUI(userUseCase)
     val mainMenu = MainMenu(userUI)
-    mainMenu.displayMenu()
 }

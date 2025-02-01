@@ -1,6 +1,5 @@
 package org.example.data
 
-import org.example.data.ShoesRepository
 import org.example.data.model.ShoesDTO
 
 class ShoesRepositoryImpl : ShoesRepository {
@@ -10,7 +9,7 @@ class ShoesRepositoryImpl : ShoesRepository {
         val newShoes = ShoesDTO(
             shoesId = shoesSource.size + 1,
             shoesName = ,
-            shoesDesc = ,
+            shoesDescription = ,
             shoesUrl = ,
             category =
         )
@@ -18,7 +17,15 @@ class ShoesRepositoryImpl : ShoesRepository {
         return newShoes
     }
 
+    override fun addShoes() {
+        TODO("Not yet implemented")
+    }
+
     override fun getAllShoes() : List<ShoesDTO> = shoesSource
+
+    override fun removeShoes(shoesId: Int): Boolean {
+        TODO("Not yet implemented")
+    }
 
     override fun removeShoesById(shoesId: Int) : Boolean {
         return shoesSource.removeIf { it.shoesId == shoesId }

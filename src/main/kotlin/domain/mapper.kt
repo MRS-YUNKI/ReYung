@@ -1,7 +1,7 @@
-package org.example.domain.Response
+package org.example.domain
 
 import org.example.data.model.UserDTO
-import org.example.domain.Pesponse.UserResponse
+import domain.Response.UserResponse
 
 fun UserDTOtoUserResponse(userDTO: UserDTO) = UserResponse(
     lastName = userDTO.lastName,

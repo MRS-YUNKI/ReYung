@@ -1,6 +1,6 @@
 package org.example.ui
 
-import org.example.domain.Pesponse.UserResponse
+import domain.Response.UserResponse
 import org.example.domain.Request.AuthorizeRequest
 import org.example.domain.Request.ChangePasswordRequest
 import org.example.domain.Request.ChangeProfileRequest
