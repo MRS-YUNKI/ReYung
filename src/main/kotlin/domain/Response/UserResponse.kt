@@ -1,6 +1,7 @@
 package domain.Response
 
 import org.example.data.model.ShoesDTO
+import org.example.domain.Response.ShoesResponse
 
 data class UserResponse(
     val userId: Int,
@@ -9,5 +10,5 @@ data class UserResponse(
     var email: String,
     var phone: String? = null,
     var address: String? = null,
-    val favouriteList: List<ShoesDTO> = emptyList()
+    val favouriteList: List<ShoesResponse> = emptyList()
 )

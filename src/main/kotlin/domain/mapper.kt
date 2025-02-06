@@ -13,14 +13,16 @@ fun UserDTOtoUserResponse(userDTO: UserDTO, shoesList: List<ShoesDTO> = emptyLis
     phone = userDTO.phone,
     userId = userDTO.userId,
     address = userDTO.address,
-//    favouriteList = shoesList.map { ::ShoesDTOtoUserResponse }
+    favouriteList = shoesList.map { ::ShoesDTOtoUserResponse }
 )
 
 
-fun ShoesDTOtoUserResponse(shoesDTO: ShoesDTO) = ShoesResponse(
-    shoesId = shoesDTO.shoesId,
-    shoesName = shoesDTO.shoesName,
-    shoesUrl = shoesDTO.shoesUrl,
-    shoesDescription = shoesDTO.shoesDescription,
-    category = shoesDTO.category,
-)
+fun ShoesDTOtoUserResponse(shoesDTO: ShoesDTO) : ShoesResponse{
+    return ShoesResponse(
+        shoesId = shoesDTO.shoesId,
+        shoesName = shoesDTO.shoesName,
+        shoesUrl = shoesDTO.shoesUrl,
+        shoesDescription = shoesDTO.shoesDescription,
+        category = shoesDTO.category,
+    )
+}

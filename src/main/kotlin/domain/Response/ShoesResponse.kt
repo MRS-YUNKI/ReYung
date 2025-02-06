@@ -7,3 +7,8 @@ data class ShoesResponse(
     val shoesUrl: String,
     val category: String,
 )
+{
+    override fun toString(): String {
+        return "Название: $shoesName\nОписание: $shoesDescription"
+    }
+}

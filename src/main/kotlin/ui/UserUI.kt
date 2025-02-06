@@ -108,7 +108,12 @@ class UserUI(private val userUseCase: UserUseCase) {
             printOutput.append("Ваш адрес ${userResponse.address}")
         }
         if (!userResponse.favouriteList.isEmpty()) {
-
+            printOutput.appendLine()
+            printOutput.append(
+                userResponse.favouriteList
+                    .map { it.toString() }
+                    .joinToString("\n")
+            )
         }
         return printOutput.toString()
     }

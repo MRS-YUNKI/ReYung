@@ -1,6 +1,5 @@
 package org.example.data
 
-import com.sun.security.jgss.InquireType
 import org.example.data.model.FavouriteDTO
 import org.example.domain.Request.AddFavouriteRequest
 
@@ -9,17 +8,18 @@ class FavouriteRepositoryImpl : FavouriteRepository {
     override fun getAllFavourites() : List<FavouriteDTO> = favouriteList
 
     override fun addFavourites(vararg addFavouriteRequest: AddFavouriteRequest) {
-        val newFavourite = FavouriteDTO(
-
-        )
+        TODO("Not yet implemented")
     }
 
     override fun removeFromFavourites() {
         TODO("Not yet implemented")
     }
 
-    override fun getFavouriteByUserId(userId: Int):  IntArray {
+    override fun getFavouriteByUserId(userId: Int): IntArray {
         return favouriteList
-            .filter
+            .filter { it.userId == userId }
+            .map { it.shoesId }
+            .toIntArray()
     }
+
 }

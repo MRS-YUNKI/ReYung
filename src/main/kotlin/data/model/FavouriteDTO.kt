@@ -1,6 +1,6 @@
 package org.example.data.model
 
 data class FavouriteDTO (
-    val userId: Int,
+    var userId: Int,
     val shoesId: Int
 )
